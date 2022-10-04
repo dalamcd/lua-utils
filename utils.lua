@@ -82,12 +82,6 @@ end
 function dotprod(a, b)
 	return a.x*b.x + a.y*b.y
 end
-
-function clamp(val, lower, upper)
-    assert(val and lower and upper, "one of val, upper, lower not supplied")
-    if lower > upper then lower, upper = upper, lower end -- swap if boundaries supplied the wrong way
-    return math.max(lower, math.min(upper, val))
-end
 --#endregion
 
 --#region String functions
@@ -157,10 +151,10 @@ end
 
 function concatTables(t1, t2)
 	-- TODO: I think this is faster if you use rawset()
-    nt = {}
-    n = 0
-    for _,v in ipairs(t1) do n=n+1; nt[n]=v end
-    for _,v in ipairs(t2) do n=n+1; nt[n]=v end
-    return nt
+	nt = {}
+	n = 0
+	for _,v in ipairs(t1) do n=n+1; nt[n]=v end
+	for _,v in ipairs(t2) do n=n+1; nt[n]=v end
+	return nt
 end
 --#endregion
