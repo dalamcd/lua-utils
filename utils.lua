@@ -19,6 +19,10 @@ end
 
 -- Prints a table as a simple list without keys
 function print_array(table)
+	if not table[1] then
+		print("{ }")
+		return
+	end
 	local str = "{ "
 	for _, value in ipairs(table) do
 		str = str .. tostring(value) .. ", "
