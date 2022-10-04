@@ -16,6 +16,17 @@ function print_table(table, idx)
 		end
 	end
 end
+
+-- Prints a table as a simple list without keys
+function print_array(table)
+	local str = "{ "
+	for _, value in ipairs(table) do
+		str = str .. tostring(value) .. ", "
+	end
+	str = str:sub(1, #str-2) .. " }"
+
+	print(str)
+end
 --#endregion
 
 --#region Stringify functions
